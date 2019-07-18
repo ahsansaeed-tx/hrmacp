@@ -1,0 +1,57 @@
+<h1>Home</h1>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<h1>All Jobs</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Experience</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <% @jobs.each do |job| %>
+      <tbody>
+    <tr>
+      <td><%= job.title %></td>
+      <td><%= job.description %></td>
+      <td><%= job.experience %></td>
+      <%if current_user.role == 'admin' %>
+
+        <td>  <%= link_to 'Edit', edit_job_path, method: :get, class: "label" %> </td>
+
+
+        <td> <%= link_to 'Delete', job_path, method: :delete, class: "label" %> </td>
+
+      <%else%>
+
+        <td> <%= link_to 'Apply', new_application_path(:job_id), class: "label" %> </td>
+
+      <%end %>
+    </tr>
+      </tbody>
+  </table>
+<% end %>
+
+    <%if current_user.role == 'admin' %>
+        <div class="btn btn-info btn-lg btn-block">
+        <%= link_to 'Edit', edit_job_path, method: :get, class: "label" %>
+      </div>
+      <div class="btn btn-info btn-lg btn-block">
+        <%= link_to 'Delete', job_path, method: :delete, class: "label" %>
+      </div>
+      <%else%>
+      <div class="btn btn-info btn-lg btn-block">
+        <%= link_to 'Apply', new_application_path, class: "label" %>
+      </div>
+      <%end %>
+
+
+
+<div class="btn btn-info btn-lg btn-block">
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "label" %>
+</div>
