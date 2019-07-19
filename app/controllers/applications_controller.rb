@@ -1,16 +1,22 @@
 class ApplicationsController < ApplicationController
+  before_action :authenticate_user!
   def new
 
   end
 
   def create
     #@user = User.find(params[current_user])
-    @job = Job.new(params[:job_id])
-    @application = @job.applications.new(application_params)
-    if current_user && @job
+    @application = Application.new(application_params)
+   # debugger
+   #@application << current_user
+    @job = Job.find(params[:job_id])
+    @application.user  = current_user
+    @application.job = @job
 
-      if @application.save
-        redirect_to application_path
+
+    if current_user
+      if @application.save!
+        redirect_to job_application_path(:job_id, @application)
       else
         render 'new'
       end
@@ -21,7 +27,6 @@ class ApplicationsController < ApplicationController
   def index
   end
   def show
-    @jobs = Job.find(params[:job_id])
     @application = Application.find(params[:id])
   end
   private

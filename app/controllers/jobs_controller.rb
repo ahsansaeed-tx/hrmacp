@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!
   def new
 
   end
@@ -15,6 +16,19 @@ class JobsController < ApplicationController
   end
   def show
 
+  end
+  def destroy
+
+    @job = Job.find(params[:id])
+    @users = @job.users
+    @applications = Application.all
+    flash[:success] = "Job #{@job.title} has deleted successfully"
+    #debugger
+    @users.each do |user|
+        JobstatusMailer.registration_confirmation(user).deliver
+    end
+    @job.destroy
+    redirect_to root_path
   end
   private
   def job_params

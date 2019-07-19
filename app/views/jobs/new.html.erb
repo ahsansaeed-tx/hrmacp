@@ -1,4 +1,5 @@
 
+<%if current_user.role == 'admin' %>
 <h1>Create Job</h1>
 
 <%= form_with scope: :job,url: jobs_path, local: true do |form| %>
@@ -25,4 +26,6 @@
   <p>
     <%= form.submit %>
   </p>
+<% end %>
+
 <% end %>
