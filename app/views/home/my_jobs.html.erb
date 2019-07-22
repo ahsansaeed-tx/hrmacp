@@ -1,0 +1,35 @@
+<%if current_user && current_user.role == 'user' %>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Experience</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <% @user_jobs.each do |job| %>
+    <tbody>
+    <tr>
+      <td><%= job.title %></td>
+      <td><%= job.description %></td>
+      <td><%= job.experience %></td>
+
+        <td> <%= link_to 'Show', job_path(job), method: :delete, class: "label" %> </td>
+        <br>
+
+        <td> <%= link_to 'Status', new_job_application_path(job), class: "label" %> </td>
+        <br>
+
+    </tr>
+    </tbody>
+    </table>
+  <% end %>
+<% end %>
+<% if current_user %>
+  <div class="btn btn-info btn-lg btn-block">
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "label" %>
+  </div>
+<% end %>

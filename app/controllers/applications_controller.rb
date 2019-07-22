@@ -15,7 +15,7 @@ class ApplicationsController < ApplicationController
 
 
     if current_user
-      if @application.save!
+      if @application.save
         redirect_to job_application_path(:job_id, @application)
       else
         render 'new'

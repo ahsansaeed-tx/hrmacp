@@ -1,0 +1,26 @@
+
+<%if current_user.role == 'admin' %>
+  <h1>Schedule Interview</h1>
+
+  <%= form_with scope: :interview, url: application_interviews_path, local: true do |form| %>
+    <p>
+      <%= form.label :time %><br>
+      <%= form.text_field :time %>
+    </p>
+
+    <p>
+      <%= form.label :date%><br>
+      <%= form.text_field :date %>
+    </p>
+
+    <p>
+      <%= form.label :address %><br>
+      <%= form.text_area :address %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+<% end %>

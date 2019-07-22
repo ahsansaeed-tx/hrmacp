@@ -1,0 +1,20 @@
+<h1>Edit Interview Scchdule</h1>
+
+<%= form_with scope: :interview ,url: application_interview_path , local: true do |form| %>
+
+
+  <p>
+    <%= form.label :time %><br>
+    <%= form.text_field :time %>
+  </p>
+
+  <p>
+    <%= form.label :date %><br>
+    <%= form.text_area :date %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

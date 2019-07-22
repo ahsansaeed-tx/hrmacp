@@ -1,0 +1,10 @@
+<p class="alert"><%= alert %></p>
+
+<p>
+  <%= @interview.date %>
+</p><br>
+<p>
+  <%= @interview.time %>
+</p><br>
+
+<%= link_to 'Edit Interview', edit_application_interview_path(@interview), method: :get %>

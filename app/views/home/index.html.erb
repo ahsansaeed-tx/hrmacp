@@ -2,8 +2,22 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
+<%if current_user && current_user.role == 'user' %>
+  <td>  <%= link_to 'My Jobs', 'home/my_jobs', method: :get, class: "label" %> </td><br>
+  <% end %>
+
 <h1>All Jobs</h1>
 
+<%if current_user && current_user.role == 'admin' %>
+<td>  <%= link_to 'Create Job', new_job_path, method: :get, class: "label" %> </td><br>
+  <% @applications = Application.all %>
+  <% @applications.each do |application|%>
+    <p><%= application.name  %></p>
+    <p><%= application.email  %></p><br>
+    <td> <%= link_to 'Schedule Interview', new_application_interview_path(application), method: :get, class: "label" %> </td>
+    <br>
+  <% end %>
+<% end %>
   <table>
     <thead>
     <tr>
@@ -21,13 +35,10 @@
       <td><%= job.description %></td>
       <td><%= job.experience %></td>
       <%if current_user && current_user.role == 'admin' %>
-        <td>  <%= link_to 'Create Job', new_job_path, method: :get, class: "label" %> </td>
-
-        <td>  <%= link_to 'Edit', edit_job_path(job), method: :get, class: "label" %> </td>
-
 
         <td> <%= link_to 'Delete', job_path(job), method: :delete, class: "label" %> </td>
         <br>
+
       <%elsif current_user%>
 
         <td> <%= link_to 'Apply', new_job_application_path(job), class: "label" %> </td>
