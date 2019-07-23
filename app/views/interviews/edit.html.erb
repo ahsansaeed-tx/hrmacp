@@ -1,16 +1,16 @@
 <h1>Edit Interview Scchdule</h1>
 
-<%= form_with scope: :interview ,url: application_interview_path , local: true do |form| %>
+<%= form_with scope: :interview ,url: application_interview_path, method: :patch, local: true do |form| %>
 
 
   <p>
     <%= form.label :time %><br>
-    <%= form.text_field :time %>
+    <%= form.time_select :time %>
   </p>
 
   <p>
     <%= form.label :date %><br>
-    <%= form.text_area :date %>
+    <%= form.date_select :date %>
   </p>
 
   <p>

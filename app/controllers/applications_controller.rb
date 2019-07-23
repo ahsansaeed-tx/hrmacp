@@ -16,7 +16,7 @@ class ApplicationsController < ApplicationController
 
     if current_user
       if @application.save
-        redirect_to job_application_path(:job_id, @application)
+        redirect_to '/home/my_jobs'
       else
         render 'new'
       end
@@ -31,7 +31,7 @@ class ApplicationsController < ApplicationController
   end
   private
   def application_params
-    params.require(:application).permit(:name, :email, :salary, :about, :comment)
+    params.require(:application).permit(:name, :email, :salary, :about, :comment, :resume)
   end
 
 end

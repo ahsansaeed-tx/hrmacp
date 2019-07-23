@@ -25,7 +25,7 @@ class InterviewsController < ApplicationController
   def update
     @interview = Interview.find(params[:id])
 
-    if @interview.update(article_params)
+    if @interview.update(interview_params)
       redirect_to application_interview_path(:id, @interview)
     else
       render 'edit'
@@ -36,6 +36,10 @@ class InterviewsController < ApplicationController
   end
   def edit
     @interview = Interview.find(params[:id])
+  end
+
+  def index
+    @interviews = Interview.group(:date)
   end
   private
   def interview_params

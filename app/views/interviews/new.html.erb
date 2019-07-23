@@ -5,12 +5,12 @@
   <%= form_with scope: :interview, url: application_interviews_path, local: true do |form| %>
     <p>
       <%= form.label :time %><br>
-      <%= form.text_field :time %>
+      <%= form.time_select :time %>
     </p>
 
     <p>
       <%= form.label :date%><br>
-      <%= form.text_field :date %>
+      <%= form.date_select :date %>
     </p>
 
     <p>
