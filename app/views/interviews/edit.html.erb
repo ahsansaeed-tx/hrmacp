@@ -12,12 +12,13 @@
     <%= form.label :date %><br>
     <%= form.date_select :date %>
   </p>
-    <% if (@interview.status == 'rejected' && @interview.interview_confirmation == false) %>
+    <%# if (@interview.status == 'rejected' && @interview.interview_confirmation == false) %>
       <p>
         <%= form.label :status %><br>
-        <%= select_tag :status, options_for_select(Interview.statuses) %>
+        <%= form.select(:status, Interview.statuses.keys.map {|key| [key.humanize, key]}) %>
+        <%#= form.select :status, options_for_select(Interview.statuses.keys.to_a) %>
       </p>
-      <% end %>
+      <%# end %>
   <p>
     <%= form.submit %>
   </p>

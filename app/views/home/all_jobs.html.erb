@@ -44,32 +44,36 @@
     </div>
   </nav>
 </head>
-
-<%if current_user && current_user.role == 'user' %>
-  <div class="container">
-    <div class="page-header">
-      <h1><p>
-        My Jobs
-      </p></h1>
-
-    </div>
-    <% @user_jobs.each do |job| %>
-    <div class="panel panel-primary">
-
-        <div class="panel-heading "><p>
-          <strong><%= job.title %> </strong>
-
-        </p> </div>
-        <div class="panel-body"><p>
-          <%= job.description %>
-        </p></div>
-      <div class="panel panel-footer">
-        <div>
-          <%= link_to 'Details', home_all_jobs_path(job_id: job.id), class:"btn btn-info" %>
-        </div>
-      </div>
-    </div>
-      <% end %>
-
-  </div>
-<% end %>
+<div class="container">
+<div class="page-header">
+  <h1><p>
+    Job Title: <%= @job.title %>
+  </p></h1>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading "><p>
+      <strong>Company Name: </strong>
+      <%= @job.company_name %>
+    </p> </div>
+  <div class="panel-body "><p>
+    <strong>Salary: </strong>
+    <%= @application.salary %>
+  </p> </div>
+  <div class="panel-body "><p>
+    <strong>Time: </strong>
+    <%= @app.time %>
+  </p> </div>
+  <div class="panel-body "><p>
+    <strong>Date: </strong>
+    <%= @app.date %>
+  </p> </div>
+  <div class="panel-body "><p>
+    <strong>Status: </strong>
+    <%= @app.status %>
+  </p> </div>
+  <div class="panel-body "><p>
+    <strong>Address: </strong>
+    <%= @app.address %>
+  </p> </div>
+</div>
+</div>

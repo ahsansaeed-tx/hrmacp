@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   get 'home/my_jobs'
+  get 'home/schedule_interview'
+  get 'home/active_jobs'
+  get 'home/all_jobs'
   resources :jobs do
-  resources :applications
+    resources :applications
   end
   resources :applications do
     resources :interviews

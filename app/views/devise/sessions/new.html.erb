@@ -1,26 +1,82 @@
-<h2>Log in</h2>
+<%= stylesheet_link_tag "main.css" %>
+<html lang="en">
+<head>
+  <title>HRMACP</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="signin.css" rel="stylesheet">
+</head>
+
+
+</html>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <body class="ex1 text-white">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="card bg-dark col-sm-5 col-md-7 col-lg-3 mx-auto">
+    <div class="card-header"><h1>HRMACP</h1></div>
+    <div class="card-body">
+      <form class="form-signin col-sm-9 col-md-7 col-lg-9 mx-auto">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <p id="alert"><%= alert %></p>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <h1 class="h3 mb-3 font-weight-normal text-center">Sign In</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" autocomplete="email" name="user[email]" id="user_email" class="form-control" placeholder="Email address" required autofocus>
+        <div>
+          <br>
+        </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" autocomplete="password" name="user[password]" id="user_password" class="form-control" placeholder="Password" required>
+        <div>
+          <br>
+        </div>
+        <div class="form-check">
+          <input name="user[remember_me]" type="checkbox" class="form-check-input" id="user_remember_me">
+          <label class="form-check-label" for="user_remember_me">Remember me</label>
+        </div>
+        <div>
+          <br>
+        </div>
+        <div class="text-center">
+        <div>
+          <%= f.submit 'Sign In',class: "btn btn-success btn-lg btn-block"%>
+        </div>
+        <div><br></div>
+        <div>
+          <%= link_to 'Sign Up', '/users/sign_up',class: "btn btn-info btn-lg btn-block" %>
+        </div>
+        <div>
+          <br>
+        </div>
+        <div>
+          <%= link_to 'Forgot Your Password?', '/users/password/new', class: "label" %>
+        </div>
+        <div>
+          <br>
+        </div>
+        <div>
+          <%= link_to 'Did not receive confirmation instructions?', '/users/confirmation/new' %>
+        </div>
+
+        <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
+        </div>
+      </form>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in"%>
   </div>
+  </body>
 <% end %>
-
-<%= render "devise/shared/links" %>

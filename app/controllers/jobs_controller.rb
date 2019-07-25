@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new(job_params)
     if (@job.save)
-      redirect_to jobs_path
+      redirect_to '/home/active_jobs'
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class JobsController < ApplicationController
         JobstatusMailer.registration_confirmation(user).deliver
     end
     @job.destroy
-    redirect_to root_path
+    redirect_to '/home/active_jobs'
   end
   private
   def job_params

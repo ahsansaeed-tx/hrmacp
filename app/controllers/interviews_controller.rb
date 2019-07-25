@@ -38,10 +38,11 @@ class InterviewsController < ApplicationController
   def update
     @interview = Interview.find(params[:id])
     if current_user.role == 'user'
-      @interview.interview_confirmation = true
+      params[:interview][:interview_confirmation] = true
+      # @interview.interview_confirmation = true
       flash[:alert] = 'Plz come to an interview on time.'
     end
-    debugger
+    #debugger
     if @interview.update(interview_params)
       redirect_to application_interview_path(:id, @interview)
     else

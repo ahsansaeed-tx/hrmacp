@@ -1,62 +1,76 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<%if current_user && current_user.role == 'user' %>
-  <td>  <%= link_to 'My Jobs', 'home/my_jobs', method: :get, class: "label" %> </td><br>
-  <% end %>
-
-<h1>All Jobs</h1>
-
-<%if current_user && current_user.role == 'admin' %>
-  <td>  <%= link_to 'Create Job', new_job_path, method: :get, class: "label" %> </td><br>
-
-  <% @applications = Application.all %>
-  <td>  <%= link_to 'Scheduled Interviews', application_interviews_path(@applications), method: :get, class: "label" %> </td><br>
-  <% @applications.each do |application|%>
-    <p><%= application.name  %></p>
-    <p><%= application.email  %></p><br>
-    <td> <%= link_to 'Schedule Interview', new_application_interview_path(application), method: :get, class: "label" %> </td>
-    <br>
-  <% end %>
-<% end %>
-  <table class = "table">
-    <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
-      <th scope="col">Experience</th>
-      <th></th>
-      <th></th>
-    </tr>
-    </thead>
-    <% @jobs.each do |job| %>
-      <tbody>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= job.experience %></td>
-        <%if current_user && current_user.role == 'admin' %>
-
-          <td> <%= link_to 'Delete', job_path(job), method: :delete, class: "label" %> </td>
-          <br>
-
-        <%elsif current_user%>
-
-          <td> <%= link_to 'Apply', new_job_application_path(job), class: "label" %> </td>
-          <br>
-        <%end %>
-      </tr>
-      </tbody>
-    <% end %>
-  </table>
-
-
-<% if current_user %>
-<div class="btn btn-info btn-lg btn-block">
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "label" %>
-</div>
-    <%else%>
-      <div class="btn btn-info btn-lg btn-block">
-        <%= link_to 'Sign in', user_session_path, method: :post, class: "label" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HRMACP</a>
       </div>
-<%end%>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to 'Home', root_path %></li></ul>
+      <%if current_user && current_user.role == 'user' %>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'My Jobs', '/home/my_jobs' %></li></ul>
+        <% end %>
+      <%if current_user && current_user.role == 'admin' %>
+      <ul class="nav navbar-nav">
+        <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
+      <ul class="nav navbar-nav">
+        <% @applications = Application.all %>
+        <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
+      <% end %>
+      <% if current_user %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="disabled"><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li></ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li></ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-method="post" href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+</head>
+
+<%if !current_user || current_user.role == 'user' %>
+<div class="container">
+  <div class="page-header">
+    <h1><p>
+      Active Jobs
+    </p></h1>
+
+  </div>
+  <% @jobs.each do |job| %>
+    <div class="panel panel-primary">
+
+      <div class="panel-heading "><p>
+        <strong><%= job.title %> </strong>
+
+      </p> </div>
+      <div class="panel-body"><p>
+        <%= job.description %>
+      </p></div>
+      <div class="panel panel-footer">
+        <div>
+          <%= link_to 'Apply', new_job_application_path(job.id), class:"btn btn-info" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+<% end %>
+

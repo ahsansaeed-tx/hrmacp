@@ -18,9 +18,9 @@
           <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
           <% @applications = Application.all %>
-          <li class="active"><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+          <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
         <ul class="nav navbar-nav">
-          <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
+          <li class="active"><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
         <ul class="nav navbar-nav">
           <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
       <% end %>
@@ -36,11 +36,9 @@
   </nav>
 </head>
 
-<p class="alert"><%= alert %></p>
-
-
-<% @interviews.each do |interview| %>
-<%= interview.date %>
-<%= interview.time %><br>
-
+<% @applications.each do |application|%>
+  <p><%= application.name  %></p>
+  <p><%= application.email  %></p><br>
+  <td> <%= link_to 'Schedule Interview', new_application_interview_path(application), method: :get %> </td>
+  <br>
 <% end %>
