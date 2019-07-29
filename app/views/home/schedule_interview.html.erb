@@ -36,9 +36,31 @@
   </nav>
 </head>
 
+<div class="container">
+  <div class="page-header">
+    <h1><p>
+      Schedule Interviews
+    </p></h1>
+
+  </div>
+
 <% @applications.each do |application|%>
-  <p><%= application.name  %></p>
-  <p><%= application.email  %></p><br>
-  <td> <%= link_to 'Schedule Interview', new_application_interview_path(application), method: :get %> </td>
-  <br>
+
+      <div class="panel panel-primary">
+
+        <div class="panel-heading "><p>
+          <strong><%= application.name %> </strong>
+
+        </p> </div>
+        <div class="panel-body"><p>
+          <%= application.email %>
+        </p></div>
+        <div class="panel panel-footer">
+          <div>
+            <td> <%= link_to 'Schedule Interview', new_application_interview_path(application), method: :get, class:"btn btn-info" %> </td>
+          </div>
+        </div>
+      </div>
 <% end %>
+
+</div>

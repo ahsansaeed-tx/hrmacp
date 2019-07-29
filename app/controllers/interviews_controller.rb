@@ -1,6 +1,10 @@
 class InterviewsController < ApplicationController
   before_action :authenticate_user!
   def new
+    @application = Application.find(params[:application_id])
+    @user = @application.user
+    @job = @application.job
+    #debugger
   end
   def set_interview_confiramtion
 
@@ -9,15 +13,17 @@ class InterviewsController < ApplicationController
     @application = Application.find(params[:application_id])
     @user = @application.user
     app = @application.interview
+    #debugger
     #@interviews = Interview.group(:date).count
-    t = Interview.all.select(:date).group_by{|e| e.date.strftime("20%y-%m-%d")}
-
+    #t = Interview.all.select(:date).group_by{|e| e.date.strftime("20%y-%m-%d")}
+    debugger
+    t = Interview.all.select(:date).group_by
     @interview = Interview.new(interview_params)
     @interview.application_id = params[:application_id]
-
+    debugger
     if current_user
       if !app
-        if t[@interview.date.to_s].try(:count) != 2
+        if t.try(:count) != 3
         if @interview.save
           JobstatusMailer.interview_schdeule(@user, @interview, :id).deliver
           flash[:alert] = 'Interview has been scheduled and mail is send to the Applicant'

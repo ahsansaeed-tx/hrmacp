@@ -44,6 +44,7 @@
     </div>
   </nav>
 </head>
+</html>
 <div class="container">
 <div class="page-header">
   <h1><p>
@@ -61,15 +62,27 @@
   </p> </div>
   <div class="panel-body "><p>
     <strong>Time: </strong>
-    <%= @app.time %>
+    <% if @app.time.nil? %>
+      Not Set
+      <% else %>
+        <%= @app.time %>
+      <% end %>
   </p> </div>
   <div class="panel-body "><p>
     <strong>Date: </strong>
-    <%= @app.date %>
+    <% if @app.date.nil? %>
+    Not Set
+    <% else %>
+      <%= @app.date %>
+    <% end %>
   </p> </div>
   <div class="panel-body "><p>
     <strong>Status: </strong>
-    <%= @app.status %>
+    <% if @app.interview_confirmation == 'true' %>
+      <%= @app.status %>
+    <% else %>
+      Not Set
+    <% end %>
   </p> </div>
   <div class="panel-body "><p>
     <strong>Address: </strong>

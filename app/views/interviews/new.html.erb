@@ -1,26 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HRMACP</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Home', root_path %></li></ul>
+      <%if current_user && current_user.role == 'admin' %>
+        <ul class="nav navbar-nav">
+          <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
+        <ul class="nav navbar-nav">
+          <% @applications = Application.all %>
+          <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
+      <% end %>
+      <ul class="nav navbar-nav">
+        <li>  </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="disabled"><a h><span class="glyphicon glyphicon-user"></span> Sign Up</a></li></ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</head>
+</html>
 <%if current_user.role == 'admin' %>
-  <h1>Schedule Interview</h1>
 
   <%= form_with scope: :interview, url: application_interviews_path, local: true do |form| %>
+<div class="container">
+    <script type="text/javascript">
+        var $jk = jQuery.noConflict();
+    </script>
+  <div class="page-header">
+    <h1><p>
+      <strong>Schedule Interview for Applicant: </strong>
+      <%= @user.email %>
+    </p></h1>
+  </div>
     <p>
-      <%= form.label :time %><br>
-      <%= form.time_select :time %>
+      <strong>Job Title: </strong>
+      <%= @job.title %>
     </p>
-
     <p>
-      <%= form.label :date%><br>
-      <%= form.date_select :date %>
+      <strong>Applicant Name: </strong>
+      <%= @application.name %>
     </p>
-
     <p>
-      <%= form.label :address %><br>
-      <%= form.text_area :address %>
+      <strong>Applicant Email: </strong>
+      <%= @user.email %>
     </p>
+    <div class="panel panel-success">
+      <div class="panel panel-heading">
+        <label for="exampleInputEmail1">Time</label>
+          <div class="form-group">
+            <div class='input-group date' id='interview_time'>
+              <input type='text' id="interview_time" name="interview[time]" placeholder="Select Time" class="form-control" required autofocus/>
+              <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+            </div>
+          </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#interview_time').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+    </div>
+  <div class="panel panel-body">
+    <label for="exampleInputEmail1">Date</label>
+          <div class="form-group">
+            <div class='input-group date' id='interview_date'>
+              <input type='text' id="interview_date" name="interview[date]" placeholder="Select Date" class="form-control"/>
+              <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+            </div>
+          </div>
 
-    <p>
+        <script type="text/javascript">
+            $(function () {
+                $('#interview_date').datetimepicker({
+                    format: "DD/MM/YYYY"
+                });
+            });
+        </script>
+    </div>
+    <div class="form-group panel-heading">
+        <label for="exampleInputEmail1">Address</label>
+        <input type="text" class="form-control" name="interview[address]" id="interview_address" aria-describedby="emailHelp" placeholder="Enter Address" required>
+      </div>
+    </div>
+
+  <p>
       <%= form.submit %>
     </p>
+</div>
+
   <% end %>
 
 <% end %>
+
+
+
+

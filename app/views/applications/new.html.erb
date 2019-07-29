@@ -1,37 +1,91 @@
-<h1>Apply For Job</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HRMACP</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ><%= link_to 'Home', root_path %></li></ul>
+      <%if current_user && current_user.role == 'user' %>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to 'My Jobs', '/home/my_jobs' %></li></ul>
+      <% end %>
+      <%if current_user && current_user.role == 'admin' %>
+        <ul class="nav navbar-nav">
+          <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
+        <ul class="nav navbar-nav">
+          <% @applications = Application.all %>
+          <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
+      <% end %>
+      <% if current_user %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="disabled"><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li></ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li></ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-method="post" href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+</head>
 
 <%= form_with scope: :application,url: job_applications_path, local: true do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-
-  <p>
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>
-  </p>
-
-  <p>
-    <%= form.label :salary %><br>
-    <%= form.text_area :salary %>
-  </p>
-
-  <p>
-    <%= form.label :about %><br>
-    <%= form.text_field :about %>
-  </p>
-
-  <p>
-    <%= form.label :comment %><br>
-    <%= form.text_field :comment %>
-  </p>
-
-  <p>
-    <%= form.label "Upload Resume" %><br>
-    <%= form.file_field :resume %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="container">
+    <div class="page-header">
+      <h1><p>
+        Job Title: <%= @job.title %><br>
+        Company: <%= @job.company_name %>
+      </p></h1>
+    </div>
+    <div class="panel panel-success">
+      <div class="form-group panel-heading">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" name="application[name]" id="application_name" aria-describedby="emailHelp" placeholder="Enter Name" required autofocus>
+        <small id="emailHelp" class="form-text text-muted">Name Should be atleast of Length 4.</small>
+      </div>
+      <div class="form-group panel-body">
+        <label for="exampleInputEmail1">Eamil</label>
+        <input type="email" class="form-control" name="application[email]" id="application_email" aria-describedby="commentHelp" placeholder="Enter Active email" required>
+      </div>
+      <div class="form-group panel-heading">
+        <label for="exampleInputEmail1">Enter your expected salary</label>
+        <input type="text" class="form-control" name="application[salary]" id="application_salary" aria-describedby="emailHelp" placeholder="Enter salary" required>
+      </div>
+      <div class="form-group panel-body">
+        <label for="exampleInputEmail1">Tell us about yourself</label>
+        <input type="text" class="form-control" name="application[about]" id="application_about" aria-describedby="commentHelp" placeholder="Tell us about your self" required>
+        <small id="commentHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group panel-heading">
+        <label for="exampleInputEmail1">Any comment</label>
+        <input type="text" class="form-control" name="application[comment]" id="application_comment" aria-describedby="commentHelp" placeholder="Enter comment" required>
+        <small id="commentHelp" class="form-text text-muted"></small>
+      </div>
+      <div  class="form-group panel-body">
+        <p>
+          <%= form.label "Upload Resume" %><br>
+          <%= form.file_field :resume %>
+        </p>
+      </div>
+    </div>
+    <p>
+      <%= form.submit 'Submit Application',class: "btn btn-success" %>
+    </p>
+  </div>
 <% end %>
