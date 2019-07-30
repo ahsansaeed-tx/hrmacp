@@ -18,8 +18,7 @@
         <ul class="nav navbar-nav">
           <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
-          <% @applications = Application.all %>
-          <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+          <li ><%= link_to 'Update Interviews Statuses', interviews_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
         <ul class="nav navbar-nav">
@@ -44,11 +43,14 @@
     <script type="text/javascript">
         var $jk = jQuery.noConflict();
     </script>
+  <div>
+  <p id="alert"> <%= alert %></p>
+  </div>
   <div class="page-header">
     <h1><p>
       <strong>Schedule Interview for Applicant: </strong>
       <%= @user.email %>
-    </p></h1>
+    </p></h1>-*
   </div>
     <p>
       <strong>Job Title: </strong>

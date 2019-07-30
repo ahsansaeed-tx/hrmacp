@@ -17,8 +17,7 @@
         <ul class="nav navbar-nav">
           <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
-          <% @applications = Application.all %>
-          <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+          <li ><%= link_to 'Update Interviews Statuses', interviews_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
         <ul class="nav navbar-nav">
@@ -55,6 +54,12 @@
         <div class="panel-body"><p>
           <%= application.email %>
         </p></div>
+        <div class="panel-body"><p>
+          <% link = rails_blob_url(application.resume, disposition: "attachment") %> <strong>Resume: </strong>
+          <td><a href="<%= link %>">download</a></td>
+      </p>
+        </div>
+
         <div class="panel panel-footer">
           <div>
             <td> <%= link_to 'Schedule Interview', new_application_interview_path(application), method: :get, class:"btn btn-info" %> </td>

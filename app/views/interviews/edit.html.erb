@@ -1,26 +1,97 @@
-<h1>Edit Interview Scchdule</h1>
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">HRMACP</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Home', root_path %></li></ul>
+      <%if current_user && current_user.role == 'admin' %>
+        <ul class="nav navbar-nav">
+          <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Update Interviews Statuses', interviews_path, method: :get %></li></ul></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
+      <% end %>
+      <ul class="nav navbar-nav">
+        <li>  </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="disabled"><a h><span class="glyphicon glyphicon-user"></span> Sign Up</a></li></ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</head>
+</head>
+</html>
 <%= form_with scope: :interview ,url: application_interview_path, method: :patch, local: true do |form| %>
 
+  <div class="container">
+    <script type="text/javascript">
+        var $jk = jQuery.noConflict();
+    </script>
+    <div>
+      <p id="alert"> <%= alert %></p>
+    </div>
+    <div class="page-header">
+      <h1><p>
+        <strong>Schedule Interview</strong>
+      </p></h1>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel panel-heading">
+        <label for="exampleInputEmail1">Time</label>
+        <div class="form-group">
+          <div class='input-group date' id='interview_time'>
+            <input type='text' id="interview_time" name="interview[time]" placeholder="Select Time" class="form-control" required autofocus/>
+            <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+          </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#interview_time').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+      </div>
+      <div class="panel panel-body">
+        <label for="exampleInputEmail1">Date</label>
+        <div class="form-group">
+          <div class='input-group date' id='interview_date'>
+            <input type='text' id="interview_date" name="interview[date]" placeholder="Select Date" class="form-control"/>
+            <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+          </div>
+        </div>
 
-  <p>
-    <%= form.label :time %><br>
-    <%= form.time_select :time %>
-  </p>
+        <script type="text/javascript">
+            $(function () {
+                $('#interview_date').datetimepicker({
+                    format: "DD/MM/YYYY"
+                });
+            });
+        </script>
+      </div>
 
-  <p>
-    <%= form.label :date %><br>
-    <%= form.date_select :date %>
-  </p>
-    <%# if (@interview.status == 'rejected' && @interview.interview_confirmation == false) %>
-      <p>
-        <%= form.label :status %><br>
-        <%= form.select(:status, Interview.statuses.keys.map {|key| [key.humanize, key]}) %>
-        <%#= form.select :status, options_for_select(Interview.statuses.keys.to_a) %>
-      </p>
-      <%# end %>
-  <p>
-    <%= form.submit %>
-  </p>
-
+    <p>
+      <%= form.submit %>
+    </p>
+  </div>
+  </div>
 <% end %>

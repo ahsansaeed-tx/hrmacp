@@ -20,9 +20,8 @@
       <%if current_user && current_user.role == 'admin' %>
         <ul class="nav navbar-nav">
           <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
-        <ul class="nav navbar-nav">
-          <% @applications = Application.all %>
-          <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+        <<ul class="nav navbar-nav">
+      <li ><%= link_to 'Update Interviews Statuses', interviews_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
           <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
         <ul class="nav navbar-nav">
@@ -65,7 +64,7 @@
     <% if @app.time.nil? %>
       Not Set
       <% else %>
-        <%= @app.time %>
+        <%= @app.time.strftime("%I:%M %p") %>
       <% end %>
   </p> </div>
   <div class="panel-body "><p>

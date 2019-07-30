@@ -21,11 +21,14 @@ class JobsController < ApplicationController
 
     @job = Job.find(params[:id])
     @users = @job.users
-    @applications = Application.all
-    flash[:success] = "Job #{@job.title} has deleted successfully"
+    @interviews = Interview.all
+
+    flash[:alert] = "Job #{@job.title} has deleted successfully"
     #debugger
     @users.each do |user|
-        JobstatusMailer.registration_confirmation(user).deliver
+        @application = user.applications.where(job_id: @job.id).last
+        @interview = @interviews.where(application_id: @application.id).last
+        JobstatusMailer.registration_confirmation(user, @job, @application, @interview).deliver
     end
     @job.destroy
     redirect_to '/home/active_jobs'

@@ -17,8 +17,7 @@
         <ul class="nav navbar-nav">
           <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
-          <% @applications = Application.all %>
-          <li ><%= link_to 'Update Interviews Statuses', application_interviews_path(@applications), method: :get %></li></ul>
+          <li ><%= link_to 'Update Interviews Statuses', interviews_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
           <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
         <ul class="nav navbar-nav">
@@ -35,25 +34,34 @@
     </div>
   </nav>
 </head>
+</html>
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+       Active Jobs
+    </h1>
+  </div>
+  <p id="alert"><strong><%= alert %></strong></p>
 <table class = "table">
   <thead>
   <tr>
-    <th scope="col">Title</th>
-    <th scope="col">Description</th>
-    <th scope="col">Experience</th>
+    <th >Title</th>
+    <th >Description</th>
+    <th >Experience</th>
     <th></th>
     <th></th>
   </tr>
   </thead>
   <% @jobs.each do |job| %>
-    <tbody>
+    <tbody class="">
     <tr>
       <td><%= job.title %></td>
       <td><%= job.description %></td>
       <td><%= job.experience %></td>
       <%if current_user && current_user.role == 'admin' %>
 
-        <td> <%= link_to 'Delete', job_path(job), method: :delete %> </td>
+        <td> <%= link_to 'Close Job', job_path(job), method: :delete, class: "btn btn-danger btn-md" %> </td>
         <br>
 
       <%elsif current_user%>
@@ -65,3 +73,4 @@
     </tbody>
   <% end %>
 </table>
+</div>

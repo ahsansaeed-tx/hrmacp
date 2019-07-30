@@ -13,31 +13,35 @@ class InterviewsController < ApplicationController
     @application = Application.find(params[:application_id])
     @user = @application.user
     app = @application.interview
+    @job = @application.job
     #debugger
     #@interviews = Interview.group(:date).count
     #t = Interview.all.select(:date).group_by{|e| e.date.strftime("20%y-%m-%d")}
-    debugger
-    t = Interview.all.select(:date).group_by
+    #debugger
     @interview = Interview.new(interview_params)
+    x = @interview.date
+    x = x.to_date
+    y = Interview.where(date: x).count
+
     @interview.application_id = params[:application_id]
-    debugger
+   # debugger
     if current_user
       if !app
-        if t.try(:count) != 3
+        if y != 3
         if @interview.save
-          JobstatusMailer.interview_schdeule(@user, @interview, :id).deliver
+          JobstatusMailer.interview_schdeule(@user, @application, @interview, @job).deliver
           flash[:alert] = 'Interview has been scheduled and mail is send to the Applicant'
-          redirect_to application_interview_path(:id, @interview)
+          redirect_to application_interviews_path(@application, @interview)
         else
         render 'new'
         end
         else
-          flash[:alert] = 'Three Interviews Already Scheduled for this Date!'
-          redirect_to application_interviews_path(:id, @interview)
+          flash[:alert] = 'Three Interviews Already Scheduled for this Date! Please Select another Date'
+          render 'new'
           end
       else
         flash[:alert] = 'Interview Already Scheduled'
-        redirect_to application_interviews_path(:id, @interview)
+        redirect_to application_interviews_path(@application, @interview)
        end
     end
   end
@@ -50,7 +54,7 @@ class InterviewsController < ApplicationController
     end
     #debugger
     if @interview.update(interview_params)
-      redirect_to application_interview_path(:id, @interview)
+      redirect_to application_interview_path(:application_id, @interview)
     else
       render 'edit'
     end
