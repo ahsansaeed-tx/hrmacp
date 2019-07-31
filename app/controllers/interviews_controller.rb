@@ -49,9 +49,10 @@ class InterviewsController < ApplicationController
     @interview = Interview.find(params[:id])
 
     #debugger
-    x = @interview.date
+    x = params[:interview][:date]
     x = x.to_date
     y = Interview.where(:date =>  x).count
+   # debugger
     if current_user.role == 'user'
       params[:interview][:interview_confirmation] = true
     end
@@ -65,6 +66,7 @@ class InterviewsController < ApplicationController
       render 'edit'
     end
     else
+    #  debugger
       flash[:alert] = 'Three Interviews Already Scheduled for this Date! Please Select another Date.'
       render 'edit'
       end
