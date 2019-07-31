@@ -1,7 +1,7 @@
 class CreateInterviews < ActiveRecord::Migration[5.2]
   def change
     create_table :interviews do |t|
-      t.string :time
+      t.string :time1
       t.string :date
       t.string :address
 
