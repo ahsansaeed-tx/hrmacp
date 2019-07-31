@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b7bd991-a2ec-488f-9cc2-d84e5aa1433b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190722134401_create_interviews.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190722134401_create_interviews.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -99,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -464,12 +463,12 @@
       <workItem from="1564050174143" duration="23841000" />
       <workItem from="1564396978666" duration="25605000" />
       <workItem from="1564483062093" duration="27815000" />
-      <workItem from="1564570902934" duration="3585000" />
+      <workItem from="1564570902934" duration="4108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174852000" />
+    <option name="totallyTimeSpent" value="175375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -768,7 +767,7 @@
     <entry file="file://$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
         </state>
       </provider>
     </entry>
