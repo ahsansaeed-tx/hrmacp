@@ -28,7 +28,9 @@ class JobsController < ApplicationController
     @users.each do |user|
         @application = user.applications.where(job_id: @job.id).last
         @interview = @interviews.where(application_id: @application.id).last
+        if @interview.present?
         JobstatusMailer.registration_confirmation(user, @job, @application, @interview).deliver
+          end
     end
     @job.destroy
     redirect_to '/home/active_jobs'
