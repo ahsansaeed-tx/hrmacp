@@ -73,7 +73,7 @@
           <% @application = job.applications.where(user_id: current_user.id).last %>
 
           <% if !@application %>
-          <%= link_to 'Apply', new_job_application_path(job), class:"btn btn-info" %>
+          <%= link_to 'Apply', new_job_application_path(job.id), class:"btn btn-info" %>
           <% else %>
             <% flash[:alert] = "You have already applied for #{job.title} at #{job.company_name} job!" %>
             <% render '/home/index' %>
