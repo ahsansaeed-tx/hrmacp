@@ -64,7 +64,7 @@
         <td> <%= link_to 'Close Job', job_path(job), method: :delete, class: "btn btn-danger btn-md" %> </td>
         <br>
 
-      <%elsif current_user%>
+      <%elsif current_user.role == 'user'%>
         <% @application = job.applications.where(user_id: current_user.id).last %>
 
         <% if !@application %>

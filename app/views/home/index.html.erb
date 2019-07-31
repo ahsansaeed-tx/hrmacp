@@ -70,14 +70,18 @@
       </p></div>
       <div class="panel panel-footer">
         <div>
-          <%# @application = job.applications.where(user_id: current_user.id).last %>
+          <% if current_user %>
+          <% @application = job.applications.where(user_id: current_user.id).last %>
 
-          <%# if !@application %>
+          <% if !@application %>
           <%= link_to 'Apply', new_job_application_path(job.id), class:"btn btn-info" %>
-          <%# else %>
-            <%# flash[:alert] = "You have already applied for #{job.title} at #{job.company_name} job!" %>
-            <%# render '/home/index' %>
-          <%# end %>
+          <% else %>
+            <% flash[:alert] = "You have already applied for #{job.title} at #{job.company_name} job!" %>
+            <% render '/home/index' %>
+          <% end %>
+            <% else %>
+            <%= link_to 'Apply', new_job_application_path(job.id), class:"btn btn-info" %>
+          <% end %>
         </div>
       </div>
     </div>
