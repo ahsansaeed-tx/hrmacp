@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b7bd991-a2ec-488f-9cc2-d84e5aa1433b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/views/home/active_jobs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/active_jobs.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -65,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="active_jobs.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="active_jobs.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/home/active_jobs.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="77" column="12" lean-forward="true" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+            <state relative-caret-position="663">
+              <caret line="75" column="21" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="75" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -88,11 +89,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-207" />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/jobs/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="jobs_controller.rb" pinned="false" current-in-tab="false">
@@ -115,7 +111,18 @@
       </file>
       <file leaf-file-name="my_jobs.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/home/my_jobs.html.erb">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-947" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="778">
+              <caret line="77" column="79" lean-forward="true" selection-start-line="77" selection-start-column="79" selection-end-line="77" selection-end-column="79" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -150,7 +157,6 @@
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/my_jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/interviews/new.html.erb" />
@@ -177,6 +183,7 @@
         <option value="$PROJECT_DIR$/app/controllers/applications_controller.rb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/views/home/active_jobs.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
       </list>
     </option>
   </component>
@@ -490,12 +497,12 @@
       <workItem from="1564050174143" duration="23841000" />
       <workItem from="1564396978666" duration="25605000" />
       <workItem from="1564483062093" duration="27815000" />
-      <workItem from="1564570902934" duration="10558000" />
+      <workItem from="1564570902934" duration="10970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181825000" />
+    <option name="totallyTimeSpent" value="182237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -535,9 +542,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/initializers/cookies_serializer.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2001" />
@@ -783,9 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/my_jobs.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -793,10 +794,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/my_jobs.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-947" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/active_jobs.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="77" column="12" lean-forward="true" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+        <state relative-caret-position="663">
+          <caret line="75" column="21" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="75" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="77" column="79" lean-forward="true" selection-start-line="77" selection-start-column="79" selection-end-line="77" selection-end-column="79" />
         </state>
       </provider>
     </entry>

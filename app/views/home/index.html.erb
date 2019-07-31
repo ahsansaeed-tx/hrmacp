@@ -60,11 +60,24 @@
 
       </p> </div>
       <div class="panel-body"><p>
+        <%= job.company_name %>
+      </p></div>
+      <div class="panel-body"><p>
         <%= job.description %>
+      </p></div>
+      <div class="panel-body"><p>
+        <%= job.experience %>
       </p></div>
       <div class="panel panel-footer">
         <div>
-          <%= link_to 'Apply', new_job_application_path(job.id), class:"btn btn-info" %>
+          <% @application = job.applications.where(user_id: current_user.id).last %>
+
+          <% if !@application %>
+          <%= link_to 'Apply', new_job_application_path(job), class:"btn btn-info" %>
+          <% else %>
+            <% flash[:alert] = "You have already applied for #{job.title} at #{job.company_name} job!" %>
+            <% render '/home/index' %>
+          <% end %>
         </div>
       </div>
     </div>

@@ -66,6 +66,7 @@
 
       <%elsif current_user%>
         <% @application = job.applications.where(user_id: current_user.id).last %>
+
         <% if !@application %>
         <td> <%= link_to 'Apply', new_job_application_path(job) %> </td>
         <br>
