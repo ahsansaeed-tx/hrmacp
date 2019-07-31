@@ -9,5 +9,6 @@ class CreateApplications < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :job_id
     end
+    add_reference :interviews, :application, index: true, foreign_key: true
   end
 end
