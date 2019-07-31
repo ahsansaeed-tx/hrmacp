@@ -46,6 +46,7 @@
 
 <%if !current_user || current_user.role == 'user' %>
 <div class="container">
+  <p id="alert"><strong><%= alert %></strong></p>
   <div class="page-header">
     <h1><p>
       Active Jobs

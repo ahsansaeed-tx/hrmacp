@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b7bd991-a2ec-488f-9cc2-d84e5aa1433b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/applications_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/applications_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/interviews_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/interviews_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mailers/jobstatus_mailer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/mailers/jobstatus_mailer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/my_jobs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/my_jobs.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/schedule_interview.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/schedule_interview.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/interviews/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/interviews/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/jobstatus_mailer/interview_schdeule.text.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/jobstatus_mailer/interview_schdeule.text.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erd.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/erd.pdf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -96,11 +83,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interviews_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="interviews_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/interviews_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+            <state relative-caret-position="138">
+              <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="548">
+              <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -130,11 +126,6 @@
               <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/jobs/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -186,7 +177,6 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/views/home/active_jobs.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" />
-        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/schedule_interview.html.erb" />
@@ -196,6 +186,7 @@
         <option value="$PROJECT_DIR$/app/views/interviews/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/my_jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/interviews_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
       </list>
     </option>
   </component>
@@ -509,12 +500,12 @@
       <workItem from="1564050174143" duration="23841000" />
       <workItem from="1564396978666" duration="25605000" />
       <workItem from="1564483062093" duration="27815000" />
-      <workItem from="1564570902934" duration="18409000" />
+      <workItem from="1564570902934" duration="19063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189676000" />
+    <option name="totallyTimeSpent" value="190330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -756,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="73" column="81" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/jobs/index.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -832,8 +816,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/interviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        <state relative-caret-position="138">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
         </state>
       </provider>
     </entry>
