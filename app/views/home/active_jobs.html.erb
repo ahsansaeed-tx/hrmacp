@@ -65,9 +65,13 @@
         <br>
 
       <%elsif current_user%>
-
+        <% @application = job.applications.where(user_id: current_user.id).last %>
+        <% if !@application %>
         <td> <%= link_to 'Apply', new_job_application_path(job) %> </td>
         <br>
+          <% else %>
+            <% flash[:alert] = "You have already applied for #{job.title} job!" %>
+          <% render '/home/active_jobs'
       <%end %>
     </tr>
     </tbody>
