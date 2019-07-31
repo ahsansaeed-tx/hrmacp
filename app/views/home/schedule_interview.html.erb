@@ -55,7 +55,7 @@
           <%= application.email %>
         </p></div>
         <div class="panel-body"><p>
-          <%=if applicaion.present? && application.resume.present? %>
+          <% if  application.present? && application.resume.present? %>
           <% link = rails_blob_url(application.resume, disposition: "attachment") %> <strong>Resume: </strong>
           <td><a href="<%= link %>">download</a></td>
       </p>
