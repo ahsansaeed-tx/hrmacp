@@ -71,8 +71,9 @@
         <br>
           <% else %>
             <% flash[:alert] = "You have already applied for #{job.title} job!" %>
-          <% render '/home/active_jobs'
-      <%end %>
+          <% render '/home/active_jobs' %>
+            <% end %>
+      <% end %>
     </tr>
     </tbody>
   <% end %>
