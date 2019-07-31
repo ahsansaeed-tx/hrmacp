@@ -18,6 +18,7 @@ class HomeController < ApplicationController
     @application = current_user.applications.where(job_id: @job.id).last
     @interview = Interview.all
     @app = @application.interview
+    #debugger
     if !@app
       @app = Interview.new
     end

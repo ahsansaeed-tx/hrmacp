@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_175019) do
+ActiveRecord::Schema.define(version: 2019_07_31_110302) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,10 +40,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_175019) do
     t.string "about"
     t.string "comment"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "job_id"
-    t.index ["user_id"], name: "index_applications_on_User_id"
   end
 
   create_table "interviews", force: :cascade do |t|
@@ -52,9 +49,9 @@ ActiveRecord::Schema.define(version: 2019_07_24_175019) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "application_id"
     t.boolean "interview_confirmation", default: false
     t.integer "status"
+    t.integer "application_id"
     t.index ["application_id"], name: "index_interviews_on_application_id"
   end
 

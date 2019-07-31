@@ -63,9 +63,15 @@
         </div>
 
         <div class="panel panel-footer">
+          <% if !application.interview %>
           <div>
             <td> <%= link_to 'Schedule Interview', new_application_interview_path(application), method: :get, class:"btn btn-info" %> </td>
           </div>
+            <% else %>
+            <div>
+              <button type="button" class="btn btn-info" disabled>Interview Scheduled</button>
+            </div>
+            <% end %>
         </div>
       </div>
 <% end %>

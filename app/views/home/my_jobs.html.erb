@@ -46,6 +46,7 @@
 
 <%if current_user && current_user.role == 'user' %>
   <div class="container">
+    <p id="alert"><strong><%= alert %></strong></p>
     <div class="page-header">
       <h1><p>
         My Jobs
@@ -59,8 +60,8 @@
           <strong><%= job.title %> </strong>
 
         </p> </div>
-        <div class="panel-body"><p>
-          <%= job.description %>
+        <div class="panel-body"><p><strong>Company Name: </strong>
+          <%= job.company_name %>
         </p></div>
       <div class="panel panel-footer">
         <div>

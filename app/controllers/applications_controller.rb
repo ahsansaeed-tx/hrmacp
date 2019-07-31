@@ -2,6 +2,10 @@ class ApplicationsController < ApplicationController
   before_action :authenticate_user!
   def new
     @job = Job.find(params[:job_id])
+    @application = @job.applications.where(user_id: current_user.id).last
+    if @application
+      redirect_to home_my_jobs_path
+    end
   end
 
   def create

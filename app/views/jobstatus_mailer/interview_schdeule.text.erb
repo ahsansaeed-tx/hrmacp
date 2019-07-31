@@ -1,7 +1,7 @@
 Hi <%=@application.name%>,
 
-Thanks for applying for this <%= @job.title %> job at <%= @job.company_name %>. I have scheduled interview for following data and time.
-Go to the following link and see and save the Interview.
+Thanks for applying for this <%= @job.title %> job at <%= @job.company_name %>. I have scheduled interview at <%= @interview.time.strftime("%I:%M %p") %> on <%= @interview.date %>.
+Go to the following link and save the Interview.
 
-<%= edit_application_interview_url(@application, @id) %>
+<%= edit_application_interview_url(@application, @interview) %>
 

@@ -47,18 +47,32 @@ class InterviewsController < ApplicationController
   end
   def update
     @interview = Interview.find(params[:id])
+
+    #debugger
+    x = @interview.date
+    x = x.to_date
+    y = Interview.where(:date =>  x).count
     if current_user.role == 'user'
       params[:interview][:interview_confirmation] = true
-      # @interview.interview_confirmation = true
-      flash[:alert] = 'Plz come to an interview on time.'
     end
-    #debugger
+    if !@interview.interview_confirmation == true
+    if y != 3
     if @interview.update(interview_params)
-      redirect_to application_interview_path(:application_id, @interview)
+      flash[:alert] = 'Plz come to an interview on time.'
+      redirect_to home_my_jobs_path
     else
+      flash[:alert] = 'Please Enter again.'
       render 'edit'
     end
-  end
+    else
+      flash[:alert] = 'Three Interviews Already Scheduled for this Date! Please Select another Date.'
+      render 'edit'
+      end
+    else
+      flash[:alert] = 'You have already scheduled an interview.'
+      redirect_to home_my_jobs_path
+    end
+    end
   def show
     @interview = Interview.find(params[:id])
   end

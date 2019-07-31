@@ -59,13 +59,13 @@
         <strong><%= job.title %> </strong>
 
       </p> </div>
-      <div class="panel-body"><p>
+      <div class="panel-body"><p><strong>Company Name: </strong>
         <%= job.company_name %>
       </p></div>
-      <div class="panel-body"><p>
+      <div class="panel-body"><p><strong>Description: </strong>
         <%= job.description %>
       </p></div>
-      <div class="panel-body"><p>
+      <div class="panel-body"><p><strong>Experience Required: </strong>
         <%= job.experience %>
       </p></div>
       <div class="panel panel-footer">
@@ -76,8 +76,9 @@
           <% if !@application %>
           <%= link_to 'Apply', new_job_application_path(job.id), class:"btn btn-info" %>
           <% else %>
-            <% flash[:alert] = "You have already applied for #{job.title} at #{job.company_name} job!" %>
-            <% render '/home/index' %>
+              <button type="button" class="btn btn-info" disabled>Applied</button>
+            <%# flash[:alert] = "You have already applied for #{job.title} at #{job.company_name} job!" %>
+            <%# redirect_to root_path %>
           <% end %>
             <% else %>
             <%= link_to 'Apply', new_job_application_path(job.id), class:"btn btn-info" %>

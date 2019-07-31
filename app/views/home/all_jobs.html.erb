@@ -77,7 +77,7 @@
   </p> </div>
   <div class="panel-body "><p>
     <strong>Status: </strong>
-    <% if @app.interview_confirmation == 'true' %>
+    <% if @app.interview_confirmation == true %>
       <%= @app.status %>
     <% else %>
       Not Set

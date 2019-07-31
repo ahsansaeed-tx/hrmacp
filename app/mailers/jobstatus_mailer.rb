@@ -12,7 +12,7 @@ class JobstatusMailer < ActionMailer::Base
   def interview_schdeule(user, application, interview, job)
     @application = application
     @user = user
-    @id  = interview
+    @interview  = interview
     @job = job
     mail(:to => "#{user.role} <#{user.email}>", :subject => "Interview Schdule")
   end
