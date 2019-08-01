@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag "main.css" %>
+<!--  <link href="/assets/main.css" media="print" rel="stylesheet" />-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -16,7 +18,7 @@
       <%if current_user && current_user.role == 'admin' %>
         <ul class="nav navbar-nav">
           <li class="active"> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
-        <<ul class="nav navbar-nav">
+        <ul class="nav navbar-nav">
       <li ><%= link_to 'Update Interviews Statuses', interviews_path, method: :get %></li></ul>
         <ul class="nav navbar-nav">
           <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
@@ -34,12 +36,14 @@
     </div>
   </nav>
 </head>
-
+</html>
 <%if current_user.role == 'admin' %>
 
-<%= form_with scope: :job,url: jobs_path, local: true do |form| %>
-
+<%= form_with scope: :job,url: jobs_path, id: "job_form", local: true do |form| %>
 <div class="container">
+  <script type="text/javascript">
+      var $jk = jQuery.noConflict();
+  </script>
   <div class="page-header">
     <h1><p>
       Create Job
@@ -48,8 +52,7 @@
     <div class="panel panel-success">
       <div class="form-group panel-heading">
         <label for="exampleInputEmail1">Company Name</label>
-        <input type="text" class="form-control" name="job[company_name]" id="job_company_name" aria-describedby="emailHelp" placeholder="Enter Company Name" required autofocus>
-        <small id="emailHelp" class="form-text text-muted">Name Should be atleast of Length 4.</small>
+        <input type="text" class="form-control" name="job[company_name]" id="job_company_name" aria-describedby="emailHelp" minlength="4" placeholder="Enter Company Name" required autofocus>
       </div>
       <div class="form-group panel-body">
         <label for="exampleInputEmail1">Title</label>
@@ -72,3 +75,9 @@
 <% end %>
 
 <% end %>
+<script type="text/javascript">
+$(document).ready(function () {
+$("#job_form").validate();
+});
+
+</script>

@@ -12,6 +12,8 @@
 //
 //= require jquery3
 //= require jquery-ui
+//= require jquery.validate.additional-methods
+//= require jquery.validate
 //= require best_in_place
 //= require best_in_place.jquery-ui
 //= require rails-ujs
@@ -28,3 +30,4 @@ $(document).ready(function() {
     /* Activating Best In Place */
     jQuery(".best_in_place").best_in_place();
 });
+

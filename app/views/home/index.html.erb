@@ -43,7 +43,7 @@
     </div>
   </nav>
 </head>
-
+</html>
 <%if !current_user || current_user.role == 'user' %>
 <div class="container">
   <p id="alert"><strong><%= alert %></strong></p>
@@ -51,7 +51,6 @@
     <h1><p>
       Active Jobs
     </p></h1>
-
   </div>
   <% @jobs.each do |job| %>
     <div class="panel panel-primary">
@@ -91,4 +90,7 @@
 
 </div>
 <% end %>
+<script type="text/javascript">
+    var $jk = jQuery.noConflict();
+</script>
 

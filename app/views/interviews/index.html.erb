@@ -41,20 +41,21 @@
   <% @application = interview.application %>
   <% @user = @application.user %>
   <% @job = @application.job %>
-  <div class="accordion" id="accordionExample">
+  <div class="accordion" id="<%= "accordionExample_#{interview.id}"%>">
     <div class="card">
-      <div class="card-header" id="headingOne">
+      <div class="card-header" id="<%= "headingOne_#{interview.id}"%>">
         <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="<%= "#collapseOne_#{interview.id}" %>" aria-expanded="true" aria-controls="<%= "collapseOne_#{interview.id}"%>">
             <%= @user.email %>
           </button>
         </h2>
       </div>
 
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div id="<%= "collapseOne_#{interview.id}"%>" class="collapse show" aria-labelledby="<%= "headingOne_#{interview.id}"%>" data-parent="<%= "#accordionExample_#{interview.id}"%>">
         <div class="card-body">
           <strong>Name: </strong><%= @application.name %>
         </div>
+        <%# debugger %>
         <div class="card-body">
           <strong>Job Title: </strong><%= @job.title %>
         </div>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag "main.css" %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -36,7 +37,7 @@
 </head>
 </head>
 </html>
-<%= form_with scope: :interview ,url: application_interview_path, method: :patch, local: true do |form| %>
+<%= form_with scope: :interview ,url: application_interview_path, id: "edit_interview_form", method: :patch, local: true do |form| %>
 
   <div class="container">
     <script type="text/javascript">
@@ -73,7 +74,7 @@
         <label for="exampleInputEmail1">Date</label>
         <div class="form-group">
           <div class='input-group date' id='interview_date'>
-            <input type='text' id="interview_date" name="interview[date]" placeholder="Select Date" class="form-control"/>
+            <input type='text' id="interview_date" name="interview[date]" placeholder="Select Date" class="form-control" required/>
             <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -95,3 +96,8 @@
   </div>
   </div>
 <% end %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#edit_interview_form").validate();
+    });
+</script>
