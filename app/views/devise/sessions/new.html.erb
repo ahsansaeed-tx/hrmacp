@@ -23,7 +23,7 @@
 
 </html>
 
-<%= form_for(resource, as: resource_name, id: "login_form", url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <script type="text/javascript">
       $(document).ready(function (){
@@ -94,8 +94,4 @@
         $("#new_user").validate();
     });
 
-</script>
-<script type="text/javascript">
-    $("#alert1").hide();
-    $("#alert1").show();
 </script>
