@@ -47,34 +47,38 @@ class InterviewsController < ApplicationController
   end
   def update
     @interview = Interview.find(params[:id])
-
-    #debugger
-    x = params[:interview][:date]
-    x = x.to_date
-    y = Interview.where(:date =>  x).count
-   # debugger
-    if current_user.role == 'user'
-      params[:interview][:interview_confirmation] = true
-    end
-    if !@interview.interview_confirmation == true
-    if y != 3
-    if @interview.update(interview_params)
-      flash[:alert] = 'Plz come to an interview on time.'
-      redirect_to home_my_jobs_path
-    else
-      flash[:alert] = 'Please Enter again.'
-      render 'edit'
-    end
-    else
-    #  debugger
-      flash[:alert] = 'Three Interviews Already Scheduled for this Date! Please Select another Date.'
-      render 'edit'
+    if params[:interview][:status] == "pending"
+      x = params[:interview][:date]
+      x = x.to_date
+      y = Interview.where(:date =>  x).count
+      # debugger
+      if current_user.role == 'user' || current_user.role == 'employee'
+        params[:interview][:interview_confirmation] = true
+      end
+      if !@interview.interview_confirmation == true
+        if y != 3
+          if @interview.update(interview_params)
+            flash[:alert] = 'Plz come to an interview on time.'
+            redirect_to home_my_jobs_path
+          else
+            flash[:alert] = 'Please Enter again.'
+            render 'edit'
+          end
+        else
+          #  debugger
+          flash[:alert] = 'Three Interviews Already Scheduled for this Date! Please Select another Date.'
+          render 'edit'
+        end
+      else
+        flash[:alert] = 'You have already scheduled an interview.'
+        redirect_to home_my_jobs_path
       end
     else
-      flash[:alert] = 'You have already scheduled an interview.'
-      redirect_to home_my_jobs_path
+      if @interview.update(interview_params)
+        redirect_to interviews_path
+      end
     end
-    end
+  end
   def show
     @interview = Interview.find(params[:id])
   end
