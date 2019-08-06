@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'home/schedule_interview'
   get 'home/active_jobs'
   get 'home/all_jobs'
+  get 'home/portfolio'
+  get 'home/AllEmployees'
   resources :jobs do
     resources :applications
   end
@@ -12,5 +14,6 @@ Rails.application.routes.draw do
     resources :interviews
   end
   resources :interviews
+  resources :employers
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

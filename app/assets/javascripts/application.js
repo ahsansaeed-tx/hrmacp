@@ -28,6 +28,8 @@
 
 $(document).ready(function() {
     /* Activating Best In Place */
+    debugger
     jQuery(".best_in_place").best_in_place();
+
 });
 

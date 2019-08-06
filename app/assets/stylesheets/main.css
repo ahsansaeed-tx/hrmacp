@@ -1,5 +1,8 @@
 .ex1 {
-    padding-top: 10%;
+    padding-top: 5%;
+}
+.ex2 {
+    padding-bottom: 5%;
 }
 .error{
     color: red;

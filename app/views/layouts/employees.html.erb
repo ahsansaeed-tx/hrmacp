@@ -2,7 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <%= stylesheet_link_tag "card.css" %>
+  <%= stylesheet_link_tag "main.css" %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,14 +15,18 @@
         <a class="navbar-brand" href="/">HRMACP</a>
       </div>
       <ul class="nav navbar-nav">
-        <li ><%= link_to 'Home', root_path %></li></ul>
-      <%if current_user && current_user.role == 'user' || current_user.role == 'employee' %>
-        <ul class="nav navbar-nav">
-          <li class="active"><%= link_to 'My Jobs', '/home/my_jobs' %></li></ul>
-      <% end %>
-      <% if current_user.role == 'employee' %>
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'Update Profile', edit_employer_path(current_user) %></li></ul>
+        <li><%= link_to 'Home', root_path %></li></ul>
+      <ul class="nav navbar-nav">
+        <li ><%= link_to 'Our Portfolio',  home_portfolio_path %></li></ul>
+      <%if current_user  %>
+        <% if current_user.role == 'user' || current_user.role == 'employee' %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'My Jobs', '/home/my_jobs' %></li></ul>
+        <% end %>
+        <% if current_user.role == 'employee' %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Update Profile', edit_employer_path(current_user) %></li></ul>
+        <% end %>
       <% end %>
       <%if current_user && current_user.role == 'admin' %>
         <ul class="nav navbar-nav">
@@ -31,12 +37,14 @@
           <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
         <ul class="nav navbar-nav">
           <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to 'Employees', '/home/AllEmployees' %></li></ul>
       <% end %>
       <% if current_user %>
         <ul class="nav navbar-nav navbar-right">
           <li class="disabled"><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li></ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <li><a data-method="delete" href="<%=destroy_user_session_path %>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
@@ -48,33 +56,8 @@
     </div>
   </nav>
 </head>
+</html>
 
-<%if current_user && current_user.role == 'user' || current_user.role == 'employee' %>
-  <div class="container">
-    <p id="alert"><strong><%= alert %></strong></p>
-    <div class="page-header">
-      <h1><p>
-        My Jobs
-      </p></h1>
-
-    </div>
-    <% @user_jobs.each do |job| %>
-    <div class="panel panel-primary">
-
-        <div class="panel-heading "><p>
-          <strong><%= job.title %> </strong>
-
-        </p> </div>
-        <div class="panel-body"><p><strong>Company Name: </strong>
-          <%= job.company_name %>
-        </p></div>
-      <div class="panel panel-footer">
-        <div>
-          <%= link_to 'Details', home_all_jobs_path(job_id: job.id), class:"btn btn-info" %>
-        </div>
-      </div>
-    </div>
-      <% end %>
-
-  </div>
-<% end %>
+<body>
+<%= yield %>
+</body>

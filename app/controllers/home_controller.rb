@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @jobs = Job.all
+    @employees = User.where(role: 'employee')
   end
   def my_jobs
     #@user = User.find(params[:id])
@@ -23,5 +24,17 @@ class HomeController < ApplicationController
       @app = Interview.new
     end
     #debugger
+  end
+  def portfolio
+    # render layout: 'portfolio'
+    @users = User.where(role: 'employee')
+    # debugger
+    render layout: 'portfolio'
+  end
+  def AllEmployees
+    # render layout: 'portfolio'
+    @employees = User.where(role: 'employee')
+    # debugger
+    render layout: 'employees'
   end
 end

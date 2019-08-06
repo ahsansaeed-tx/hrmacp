@@ -18,6 +18,10 @@
         <ul class="nav navbar-nav">
           <li class="active"><%= link_to 'My Jobs', '/home/my_jobs' %></li></ul>
       <% end %>
+      <% if current_user.role == 'employee' %>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Update Profile', edit_user_path(current_user) %></li></ul>
+      <% end %>
       <%if current_user && current_user.role == 'admin' %>
         <ul class="nav navbar-nav">
           <li> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
@@ -81,12 +85,13 @@
     <% if @app.interview_confirmation == true %>
       <%= @app.status %>
       <% if @app.status == 'accepted' %>
-          <% if current_user.role == 'user' || current_user.role == 'employee' %>
+          <% if current_user.role == 'user'%>
         <button type="button" id="accept" class="btn btn-success btn-sm">Accept Offer</button>
         <script type="text/javascript">
             $(document).ready(function () {
                 $("#accept").click(function () {
                     <% User.update(current_user.id, :role => 'employee') %>
+                    <% User.update(current_user.id, :designation => @application.title) %>
                     <% link_to home_my_jobs_path %>
                 });
             });

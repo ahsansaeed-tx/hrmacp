@@ -5,6 +5,7 @@ ruby '2.4.1'
 gem 'best_in_place', '~> 3.0.1'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'bootstrap_form'
 #gem 'bootstrap-datepicker-rails'
 gem 'devise'
 gem 'rails-erd', group: :development

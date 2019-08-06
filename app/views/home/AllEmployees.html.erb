@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
+  </head>
+</html>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>
+      All Employees
+    </h1>
+  </div>
+  <p id="alert"><strong><%= alert %></strong></p>
+  <table class = "table">
+    <thead>
+    <tr>
+      <th >Name</th>
+      <th >Email</th>
+      <th >Salary</th>
+      <th> Designation</th>
+      <th></th>
+    </tr>
+    </thead>
+    <% @employees.each do |employee| %>
+      <tbody >
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.email %></td>
+        <td><%= best_in_place employee, :salary, :type => :input, :url => home_AllEmployees_path %></td>
+        <% if employee.designation %>
+        <td><%= employee.designation %></td>
+          <% else %>
+          <td> Not Set </td>
+          <% end %>
+        <%# if employee.salary %>
+
+          <%# end %>
+      </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>
