@@ -1,0 +1,8 @@
+<% @attendance_history.each do |attendance| %>
+  <% if attendance.value == 't' %>
+  Value: Present<br>
+    <% else %>
+    Value: Absent<br>
+    <% end %>
+  Date:<%= attendance.date.strftime("%d/%m/%y") %><br>
+<% end %>

@@ -28,7 +28,7 @@
 
 $(document).ready(function() {
     /* Activating Best In Place */
-    debugger
+    // debugger
     jQuery(".best_in_place").best_in_place();
 
 });

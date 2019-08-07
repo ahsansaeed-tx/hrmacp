@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
 <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
   </head>
 </html>
@@ -28,7 +28,8 @@
       <tr>
         <td><%= employee.name %></td>
         <td><%= employee.email %></td>
-        <td><%= best_in_place employee, :salary, :type => :input, :url => home_AllEmployees_path %></td>
+        <td><%= best_in_place employee, :salary, :as => :input, :url => employer_path(employee), :method => :patch %></td>
+        <%#= employee.salary %>
         <% if employee.designation %>
         <td><%= employee.designation %></td>
           <% else %>

@@ -1,0 +1,4 @@
+<% @salary_history.each do |salary| %>
+Salary:<%= salary.salary %><br>
+Month:<%= salary.month.strftime("%m/%y") %><br>
+<% end %>

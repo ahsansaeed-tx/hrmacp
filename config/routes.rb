@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'home/all_jobs'
   get 'home/portfolio'
   get 'home/AllEmployees'
+  get 'home/salary_history'
+  get 'home/attendance_history'
   resources :jobs do
     resources :applications
   end

@@ -3,6 +3,10 @@ class HomeController < ApplicationController
   def index
     @jobs = Job.all
     @employees = User.where(role: 'employee')
+    @salary_sum = User.where(role: 'employee', salary_status: false).sum(:salary)
+    @attendance = User.where(role: 'employee', attendance_value: true).count
+
+    # debugger
   end
   def my_jobs
     #@user = User.find(params[:id])
@@ -36,5 +40,11 @@ class HomeController < ApplicationController
     @employees = User.where(role: 'employee')
     # debugger
     render layout: 'employees'
+  end
+  def salary_history
+    @salary_history = current_user.salaries
+  end
+  def attendance_history
+    @attendance_history = current_user.attendances
   end
 end

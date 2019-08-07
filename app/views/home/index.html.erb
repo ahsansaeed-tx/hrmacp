@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
 <!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -36,7 +37,7 @@
         <ul class="nav navbar-nav">
           <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
         <ul class="nav navbar-nav">
-          <li ><%= link_to 'Employees', '/home/AllEmployees' %></li></ul>
+          <li ><%= link_to 'Employees', employers_path, method: :get %></li></ul>
       <% end %>
       <% if current_user %>
       <ul class="nav navbar-nav navbar-right">
@@ -106,13 +107,43 @@
 <div class="container">
   <div class="page-header">
     <h1><p>
-      Employees Information
+      Employees
     </p></h1>
   </div>
   <div>
     <h2><strong>Total Employees: <%= @employees.count%> </strong></h2>
   </div>
+  <div class="page-header">
+    <h1><p>
+      Salary
+    </p></h1>
+  </div>
+  <div>
+    <h2><strong>Due Salary: <%= @salary_sum %> </strong></h2>
+  </div>
+  <div class="page-header">
+    <h1><p>
+      Attendance
+    </p></h1>
+  </div>
+  <div>
+    <h2><strong>Present Employees: <%= @attendance %> </strong></h2>
+  </div>
 </div>
 <% end %>
 <% end %>
-
+<% if current_user %>
+  <% if current_user.role == 'employee' %>
+    <div class="container">
+      <div class="page-header">
+        <h1><p>
+          Attendance
+        </p></h1>
+      </div>
+      <div>
+        <h2><strong>Please Mark your Attendance: </strong> <%= best_in_place current_user, :attendance_value,
+                     as: :checkbox, :url => employer_path(current_user), collection: {false: "Absent", true:"Present"} %></h2>
+      </div>
+    </div>
+  <% end %>
+<% end %>

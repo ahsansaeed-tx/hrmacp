@@ -91,7 +91,6 @@
             $(document).ready(function () {
                 $("#accept").click(function () {
                     <% User.update(current_user.id, :role => 'employee') %>
-                    <% User.update(current_user.id, :designation => @application.title) %>
                     <% link_to home_my_jobs_path %>
                 });
             });
