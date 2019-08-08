@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b7bd991-a2ec-488f-9cc2-d84e5aa1433b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190807135416_change_salary_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190807135416_change_salary_type.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20190807142112_create_salaries.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20190806162804_add_column_to_users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20190806162804_add_column_to_users.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -40,21 +38,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="20190724175019_add_default_value_to_show_attribute.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20190724175019_add_default_value_to_show_attribute.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="20190731110302_create_applications.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20190731110302_create_applications.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="20190724164641_add_columns_to_interview.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20190724164641_add_columns_to_interview.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="20190724112152_change_type_interview.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,11 +47,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20190807135416_change_salary_type.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="20190807135416_change_salary_type.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20190807135416_change_salary_type.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
-              <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20190807180922_create_attendances.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20190807180922_create_attendances.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20190808174114_add_column_to_user_update_profile.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20190808174114_add_column_to_user_update_profile.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20190807144246_add_columnto_users.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20190807144246_add_columnto_users.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -78,9 +88,13 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="20190806162804_add_column_to_users.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="20190806162804_add_column_to_users.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20190806162804_add_column_to_users.rb">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="20190806172214_add_default_tosalary_column.rb" pinned="false" current-in-tab="false">
@@ -119,7 +133,6 @@
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/app/views/home/portfolio.html.erb" />
-        <option value="$PROJECT_DIR$/db/migrate/20190806162804_add_column_to_users.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/employees.hmtl.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20190806172214_add_default_tosalary_column.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
@@ -166,6 +179,7 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190807135416_change_salary_type.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20190806162804_add_column_to_users.rb" />
       </list>
     </option>
   </component>
@@ -463,12 +477,12 @@
       <workItem from="1564988383977" duration="12121000" />
       <workItem from="1565089473438" duration="22642000" />
       <workItem from="1565178059754" duration="25003000" />
-      <workItem from="1565267246484" duration="20636000" />
+      <workItem from="1565267246484" duration="21080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310161000" />
+    <option name="totallyTimeSpent" value="310605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -752,34 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190808174114_add_column_to_user_update_profile.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190807180922_create_attendances.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190807144246_add_columnto_users.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190807143214_create_salaries_table.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20190807142112_create_salaries.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -798,12 +784,6 @@
     <entry file="file://$PROJECT_DIR$/db/migrate/20190806111517_addcolumnstouser.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190806162804_add_column_to_users.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190806172214_add_default_tosalary_column.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20190724112152_change_type_interview.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -811,10 +791,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190807143214_create_salaries_table.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20190807135416_change_salary_type.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" column="41" lean-forward="true" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190807144246_add_columnto_users.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190807180922_create_attendances.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190808174114_add_column_to_user_update_profile.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190806172214_add_default_tosalary_column.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190806162804_add_column_to_users.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
