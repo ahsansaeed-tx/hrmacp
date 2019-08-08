@@ -16,6 +16,8 @@
       </div>
       <ul class="nav navbar-nav">
         <li><%= link_to 'Home', root_path %></li></ul>
+      <ul class="nav navbar-nav">
+        <li ><%= link_to 'Our Portfolio',  home_portfolio_path %></li></ul>
       <%if current_user && current_user.role == 'admin' %>
         <ul class="nav navbar-nav">
           <li class="active"> <%= link_to 'Create Job', new_job_path, method: :get %></li></ul>
@@ -25,6 +27,8 @@
           <li ><%= link_to 'Schedule Interviews', '/home/schedule_interview' %></li></ul>
         <ul class="nav navbar-nav">
           <li ><%= link_to 'Active Jobs', '/home/active_jobs' %></li></ul>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Employees', employers_path, method: :get %></li></ul>
       <% end %>
       <ul class="nav navbar-nav">
         <li>  </li>

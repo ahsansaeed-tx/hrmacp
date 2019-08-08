@@ -31,7 +31,7 @@ class HomeController < ApplicationController
   end
   def portfolio
     # render layout: 'portfolio'
-    @users = User.where(role: 'employee')
+    @users = User.where(role: 'employee', update_profile: true)
     # debugger
     render layout: 'portfolio'
   end
@@ -42,9 +42,11 @@ class HomeController < ApplicationController
     render layout: 'employees'
   end
   def salary_history
-    @salary_history = current_user.salaries
+    @salary_history = current_user.salaries.order(date: :desc)
+    render layout: 'salary_history'
   end
   def attendance_history
-    @attendance_history = current_user.attendances
+    @attendance_history = current_user.attendances.order(date: :desc)
+    render layout: 'attendance_history'
   end
 end

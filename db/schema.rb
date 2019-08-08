@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_180922) do
+ActiveRecord::Schema.define(version: 2019_08_08_174114) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_180922) do
     t.float "salary", default: 0.0
     t.boolean "salary_status", default: false
     t.boolean "attendance_value", default: false
+    t.boolean "update_profile", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

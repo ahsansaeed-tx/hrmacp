@@ -19,9 +19,11 @@
     <tr>
       <th >Name</th>
       <th >Email</th>
+      <th >Attendance status</th>
       <th >Salary</th>
       <th> Designation</th>
       <th> Salary Status</th>
+      <th> Employee Status</th>
     </tr>
     </thead>
     <% @employees.each do |employee| %>
@@ -29,12 +31,21 @@
       <tr>
         <td><%= employee.name %></td>
         <td><%= employee.email %></td>
+        <td><% if employee.attendance_value == true %>
+            Present
+          <% else %>
+            Absent
+          <% end %>
+        </td>
         <td><%= best_in_place employee, :salary, :as => :input, :url => employer_path(employee), :method => :put %></td>
         <%#= employee.salary %>
         <td><%= best_in_place employee, :designation, :as => :input, :url => employer_path(employee), :method => :put %></td>
-        <%# if employee.salary %>
+        <% if employee.salary_status == false %>
         <td><%= best_in_place employee, :salary_status, as: :checkbox, :url => employer_path(employee), collection: {false: "Unpaid", true: "Paid"} %></td>
-        <%# end %>
+        <% else %>
+        <td>Paid</td>
+        <% end %>
+        <td><%= best_in_place employee, :role, as: :select, :url => employer_path(employee), :collection => [["user","Terminate"],["employee","Active"]] %></td>
       </tr>
       </tbody>
     <% end %>

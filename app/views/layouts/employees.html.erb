@@ -20,7 +20,7 @@
       <ul class="nav navbar-nav">
         <li ><%= link_to 'Our Portfolio',  home_portfolio_path %></li></ul>
       <%if current_user  %>
-        <% if current_user.role == 'user' || current_user.role == 'employee' %>
+        <% if current_user.role == 'user' %>
           <ul class="nav navbar-nav">
             <li><%= link_to 'My Jobs', '/home/my_jobs' %></li></ul>
         <% end %>

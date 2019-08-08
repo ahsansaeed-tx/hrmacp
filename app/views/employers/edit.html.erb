@@ -15,6 +15,7 @@
     <%= form.text_field :fb, placeholder: 'Enter FB Url', label: 'Facebook'  %>
     <%= form.text_field :twitter, placeholder: 'Enter Twitter Url', label: 'Twitter'  %>
     <%= form.text_field :linkedin, placeholder: 'Enter Linkdein Url', label: 'Linkedin',required: true %>
+    <%= form.hidden_field :update_profile %>
     <%= form.file_field :avatar, placeholder: '--------------------------------------------------------- ', label: 'Upload your Profile Image' ,required: true%>
 
     <%= form.submit 'Update Profile',class: "btn btn-success" %>

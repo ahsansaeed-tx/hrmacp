@@ -1,4 +1,28 @@
-<% @salary_history.each do |salary| %>
-Salary:<%= salary.salary %><br>
-Month:<%= salary.month.strftime("%m/%y") %><br>
-<% end %>
+<div class="container">
+  <div class="page-header">
+    <h1>
+      Salary History
+    </h1>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Month</th>
+      <th scope="col">Salary</th>
+    </tr>
+    </thead>
+    <% count = 1 %>
+    <% @salary_history.each do |salary| %>
+    <tbody>
+    <tr>
+      <th><%= count%></th>
+      <td><%= salary.month.strftime("%b, %y") %></td>
+      <td><%= salary.salary %></td>
+      <% count = count+1 %>
+    </tr>
+
+    </tbody>
+    <% end %>
+  </table>
+</div>

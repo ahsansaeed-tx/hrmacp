@@ -3,7 +3,11 @@
 </style>
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<div class="container">
+  <div class="page-header">
+  <h1>My Profile</h1>
+  </div>
+<% if @user.update_profile == true %>
 <div class="card">
   <%= image_tag  @user.avatar, alt: "Profile Picture", style: "width:100%" %>
   <h1><%= @user.name%></h1>
@@ -15,5 +19,11 @@
   <a href="<%= @user.fb %>"class="abc"><i class="fa fa-facebook"></i></a>
   <a href="<%= @user.twitter %>"class="abc"><i class="fa fa-twitter"></i></a>
   <a href="<%= @user.linkedin %>"class="abc"><i class="fa fa-linkedin"></i></a>
-  <p><button>Contact</button></p>
+  <p><%= link_to 'Edit Profile', edit_employer_path(current_user),class: 'btn btn-warning btn-block' %></p>
+</div>
+
+<% else %>
+<h2><strong>Please Update Your Profile. So that we can share as Company's Portfolio.</strong></h2>
+
+<% end %>
 </div>

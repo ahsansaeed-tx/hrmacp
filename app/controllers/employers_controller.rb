@@ -16,10 +16,13 @@ class EmployersController < ApplicationController
       current_user = @user
     end
 
-    debugger
-
+    # debugger
+    if current_user.role == 'employee'
+      params[:user][:update_profile] = true
+    end
     if current_user.role == 'employee' && @user.update(user_params)
       flash[:alert] = 'Profile Has been Updated.'
+      # debugger
       if params[:user][:attendance_value] == "true"
         a = Attendance.create(:user_id => @user.id, :date => Date.today, :value => @user.attendance_value )
         flash[:alert] = 'Attendance Has been Updated.'
@@ -70,6 +73,6 @@ class EmployersController < ApplicationController
     params.require(:user).permit(:name, :university, :slack, :github, :fb,
                                  :twitter, :linkedin,
                                  :avatar, :salary, :salary_status, :designation,
-                                 :attendance_value)
+                                 :attendance_value, :role, :update_profile)
   end
 end

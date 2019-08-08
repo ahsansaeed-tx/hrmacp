@@ -18,13 +18,19 @@
       <ul class="nav navbar-nav">
         <li ><%= link_to 'Our Portfolio', home_portfolio_path %></li></ul>
       <%if current_user  %>
-        <% if current_user.role == 'user' || current_user.role == 'employee' %>
+        <% if current_user.role == 'user' %>
         <ul class="nav navbar-nav">
         <li><%= link_to 'My Jobs', '/home/my_jobs' %></li></ul>
           <% end %>
         <% if current_user.role == 'employee' %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'My Profile', employer_path(current_user) %></li></ul>
           <ul class="nav navbar-nav">
             <li><%= link_to 'Update Profile', edit_employer_path(current_user) %></li></ul>
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Salary History', home_salary_history_path %></li></ul>
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Attendance History', home_attendance_history_path %></li></ul>
         <% end %>
         <% end %>
       <%if current_user && current_user.role == 'admin' %>
@@ -56,7 +62,7 @@
   </nav>
 </head>
 </html>
-<%if !current_user || current_user.role == 'user' || current_user.role == 'employee' %>
+<%if !current_user || current_user.role == 'user'  %>
 <div class="container">
   <p id="alert"><strong><%= alert %></strong></p>
   <div class="page-header">
@@ -140,10 +146,13 @@
           Attendance
         </p></h1>
       </div>
-      <div>
+      <div><% if current_user.attendance_value == false %>
         <h2><strong>Please Mark your Attendance: </strong> <%= best_in_place current_user, :attendance_value,
                      as: :checkbox, :url => employer_path(current_user), collection: {false: "Absent", true:"Present"} %></h2>
-      </div>
+          <%else %>
+        <h2><strong>You have marked your Attendance for Date:<%=Date.today.strftime("%d/%m/%y")%></strong></h2>
+          <% end %>
+          </div>
     </div>
   <% end %>
 <% end %>
