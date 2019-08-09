@@ -4,6 +4,7 @@ class InterviewsController < ApplicationController
     @application = Application.find(params[:application_id])
     @user = @application.user
     @job = @application.job
+    render layout: 'schedule_interviews'
     #debugger
   end
   def set_interview_confiramtion
