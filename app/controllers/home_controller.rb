@@ -42,7 +42,7 @@ class HomeController < ApplicationController
     render layout: 'employees'
   end
   def salary_history
-    @salary_history = current_user.salaries.order(date: :desc)
+    @salary_history = current_user.salaries.order(month: :desc)
     render layout: 'salary_history'
   end
   def attendance_history
