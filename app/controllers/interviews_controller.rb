@@ -84,6 +84,7 @@ class InterviewsController < ApplicationController
   end
   def edit
     @interview = Interview.find(params[:id])
+    # render layout: 'schedule_interviews'
   end
 
   def index
