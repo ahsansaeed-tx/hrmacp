@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  protect_from_forgery with: :null_session
   def edit
     @user = User.find(params[:id])
     render layout: 'employee'

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-
+  protect_from_forgery with: :null_session
   def index
     @jobs = Job.all
     @employees = User.where(role: 'employee')

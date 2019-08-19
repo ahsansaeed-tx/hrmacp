@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_user!
+  protect_from_forgery with: :null_session
   def new
     @job = Job.find(params[:job_id])
     @application = @job.applications.where(user_id: current_user.id).last
