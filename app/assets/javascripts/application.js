@@ -14,7 +14,6 @@
 //= require jquery-ui
 //= require jquery.validate
 //= require jquery.validate.additional-methods
-
 //= require best_in_place
 //= require best_in_place.jquery-ui
 //= require rails-ujs
