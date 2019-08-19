@@ -1,6 +1,6 @@
 class EmployersController < ApplicationController
-  # before_action :authenticate_user!
-  protect_from_forgery with: :null_session
+  before_action :authenticate_user!
+  # protect_from_forgery with: :null_session
   # protect_from_forgery with: :null_session
   def edit
     @user = User.find(params[:id])
