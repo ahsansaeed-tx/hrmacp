@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'home/AllEmployees'
   get 'home/salary_history'
   get 'home/attendance_history'
+  get 'home/accept_offer'
+  get 'home/decline_offer'
   resources :jobs do
     resources :applications
   end

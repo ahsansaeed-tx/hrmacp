@@ -80,26 +80,25 @@
     <strong>Status: </strong>
     <% if @app.interview_confirmation == true %>
       <%= @app.status %>
-      <% if @app.status == 'accepted' %>
-          <% if current_user.role == 'user'%>
-        <button type="button" id="accept" class="btn btn-success btn-sm">Accept Offer</button>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#accept").click(function () {
-                    <% User.update(current_user.id, :role => 'employee') %>
-                    <% link_to home_my_jobs_path %>
-                });
-            });
-        </script>
-        <button type="button" id="reject" class="btn btn-danger btn-sm">Reject Offer</button>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#reject").click(function () {
-                    <% Interview.update(@app.id, :status => 'rejected') %>
-                    <% link_to home_my_jobs_path %>
-                });
-            });
-        </script>
+      <% if @app.status == 'accepted' || @app.status == 'rejected' %>
+          <% if current_user.role == 'user' || current_user.role == 'employee'%>
+          <%= link_to "Accept Offer", home_accept_offer_path, class: "btn btn-success btn-sm", remote: true %>
+          <%= link_to "Decline Offer",home_decline_offer_path, class: "btn btn-danger btn-sm", remote: true %>
+<!--        <script type="text/javascript">-->
+<!--            // $(document).ready(function () {-->
+<!--                $('#accept').click(function () {-->
+                    <%# User.update(current_user.id, :role => 'employee') %>
+<!--                    // window.location.href = '/home/my_jobs'-->
+<!--                    window.location.replace('/home/my_jobs');-->
+<!--                    console.log("link clicked");-->
+<!--                    $.ajax({-->
+<!--                        // window:location.href = '/home/my_jobs'-->
+<!--                    })-->
+<!--                });-->
+<!--            // });-->
+<!--        </script>-->
+<!--        <button type="button" onclick="myFunction1()" id="reject" class="btn btn-danger btn-sm">Reject Offer</button>-->
+
         <% end %>
       <% end %>
     <% else %>
@@ -113,3 +112,33 @@
 </div>
 </div>
 
+<!--<script type="text/javascript">-->
+<!--    // $(document).ready(function () {-->
+<!--    $('#reject').click(function () {-->
+        <%# User.update(current_user.id, :role => 'user') %>
+        <%# Interview.update(@app.id, :status => 'rejected') %>
+<!--        // window.location.replace('/home/my_jobs');-->
+<!--        console.log("Reject clicked");-->
+<!--        $.ajax({-->
+<!--            // window:location.href = '/home/my_jobs'-->
+<!--        })-->
+<!--    });-->
+<!--    // });-->
+<!--</script>-->
+
+<!--<script>-->
+<!--  var a = 0-->
+<!--    function myFunction() {-->
+
+    <%# User.update(current_user.id, :role => 'employee') %>
+<!--    // window.location.href = '/home/my_jobs'-->
+<!--    window.location.replace('/home/my_jobs');-->
+<!--}-->
+<!--    function myFunction1() {-->
+<!--        debugger-->
+        <%# User.update(current_user.id, :role => 'user') %>
+        <%# Interview.update(@app.id, :status => 'rejected') %>
+<!--        // window.location.href = '/home/my_jobs'-->
+<!--        window.location.replace('/home/my_jobs');-->
+<!--    }-->
+<!--</script>-->

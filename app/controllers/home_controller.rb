@@ -8,6 +8,13 @@ class HomeController < ApplicationController
 
     # debugger
   end
+  def decline_offer
+    User.update(current_user.id, :role => 'user')
+    Interview.update(@app.id, :status => 'rejected')
+  end
+  def accept_offer
+    User.update(current_user.id, :role => 'employee')
+  end
   def my_jobs
     #@user = User.find(params[:id])
     @user_jobs = current_user.jobs

@@ -3,23 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0b7bd991-a2ec-488f-9cc2-d84e5aa1433b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/applications_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/applications_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/employers_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/employers_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/interviews_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/interviews_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/jobs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/jobs_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/salary_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/salary_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/attendance_history.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/attendance_history.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/employee.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/employee.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/employee_show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/employee_show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/employees.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/employees.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/portfolio.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/portfolio.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/salary_history.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/salary_history.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/schedule_interviews.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/schedule_interviews.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/devise.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/interviews/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/interviews/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -55,52 +43,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="salary_history.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/salary_history.html.erb">
+      <file leaf-file-name="schedule_interview.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home/schedule_interview.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
+            <state relative-caret-position="-662">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="portfolio.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/portfolio.html.erb">
+      <file leaf-file-name="attendance_history.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/attendance_history.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="483">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="22" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employee.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/employee.html.erb">
+      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/interviews/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="506">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="devise.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+      <file leaf-file-name="interviews_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/interviews_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="257" column="31" selection-start-line="257" selection-start-column="31" selection-end-line="257" selection-end-column="31" />
+            <state relative-caret-position="184">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employee_show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/employee_show.html.erb">
+      <file leaf-file-name="schedule_interviews.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/schedule_interviews.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+            <state relative-caret-position="433">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -109,20 +97,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css">
+      <file leaf-file-name="all_jobs.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home/all_jobs.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="640">
+              <caret line="138" column="12" lean-forward="true" selection-start-line="138" selection-start-column="12" selection-end-line="139" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="card.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/card.css">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+            <state relative-caret-position="506">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -136,21 +133,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employers_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/employers_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1541">
-              <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>def update\n    \@interview \= Interview\.find\(params\[\:id\]\)\n\n    if params\[\:interview\]\[\:status\] \=\= \'pending\'\n    x \= params\[\:interview\]\[\:date\]\n    x \= x\.to_date\n    y \= Interview\.where\(\:date \=\&gt;  x\)\.count\n   \# debugger\n    if current_user\.role \=\= \'user\'\n      params\[\:interview\]\[\:interview_confirmation\] \= true\n    end\n    if \!\@interview\.interview_confirmation \=\= true\n    if y \!\= 3\n    if \@interview\.update\(interview_params\)\n      flash\[\:alert\] \= \'Plz come to an interview on time\.\'\n      redirect_to home_my_jobs_path\n    else\n      flash\[\:alert\] \= \'Please Enter again\.\'\n      render \'edit\'\n    end\n    else\n    \#  debugger\n      flash\[\:alert\] \= \'Three Interviews Already Scheduled for this Date\! Please Select another Date\.\'\n      render \'edit\'\n      end\n    else\n      flash\[\:alert\] \= \'You have already scheduled an interview\.\'\n      redirect_to home_my_jobs_path\n    end\n    else\n      if \@interview\.update\(interview_params\)\n        redirect_to interviews_path\n      end\n    end</find>
       <find>jquery-rails</find>
+      <find>accept</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +153,6 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190807180922_create_attendances.rb" />
         <option value="$PROJECT_DIR$/config.ru" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/workers/hello_world.rb" />
         <option value="$PROJECT_DIR$/app/workers/attendance_status.rb" />
         <option value="$PROJECT_DIR$/app/views/employers/index.html.erb" />
@@ -180,11 +168,9 @@
         <option value="$PROJECT_DIR$/db/migrate/20190807135416_change_salary_type.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190809114811_add_column_to_users_heroku.rb" />
         <option value="$PROJECT_DIR$/app/views/employers/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/interviews/new.html.erb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/active_jobs.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/my_jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/portfolio.html.erb" />
@@ -195,8 +181,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/employers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/applications_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/interviews_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/jobs_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/salary_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
@@ -210,6 +194,11 @@
         <option value="$PROJECT_DIR$/app/views/layouts/employee_show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/card.css" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/interviews_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/interviews/new.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/home/all_jobs.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       </list>
     </option>
   </component>
@@ -383,7 +372,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/config/routes.rb&#10;Gemfile&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/Gemfile&#10;applica&#9;null&#9;null&#10;user&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/app/models/user.rb&#10;appli&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/app/models/application.rb&#10;job&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/app/models/job.rb&#10;deve&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/config/environments/development.rb" />
+    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/config/routes.rb&#10;hom&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/app/controllers/home_controller.rb&#10;Gemfile&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/Gemfile&#10;applica&#9;null&#9;null&#10;user&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/app/models/user.rb&#10;appli&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/app/models/application.rb&#10;job&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/app/models/job.rb&#10;deve&#9;FILE&#9;file:///home/hmabuzar/Desktop/hrmacp/config/environments/development.rb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../login1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -539,21 +528,21 @@
       <workItem from="1565178059754" duration="25003000" />
       <workItem from="1565267246484" duration="22414000" />
       <workItem from="1565351224582" duration="8146000" />
-      <workItem from="1566212049632" duration="11073000" />
+      <workItem from="1566212049632" duration="20747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331158000" />
+    <option name="totallyTimeSpent" value="340832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24986508" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986508" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32910052" />
       <window_info anchor="right" id="Database" order="3" weight="0.32973558" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.32910052" />
@@ -587,20 +576,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190807135416_change_salary_type.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190809114811_add_column_to_users_heroku.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/jobstatus_mailer/registration_confirmation.text.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -624,13 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/all_jobs.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/attendance_history.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -649,13 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/interviews/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="45" column="8" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="47" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -723,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/interviews_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/jobs_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -771,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/active_jobs.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -792,32 +739,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/attendance_history.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/mailer.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/mailer.text.erb">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/schedule_interviews.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/schedule_interview.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/employers/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
@@ -893,6 +819,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/schedule_interview.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-662">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/schedule_interviews.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/attendance_history.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="22" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/interviews_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/interviews/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.1/gems/actionpack-5.2.3/lib/action_dispatch/journey/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/all_jobs.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="138" column="12" lean-forward="true" selection-start-line="138" selection-start-column="12" selection-end-line="139" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
     </entry>
